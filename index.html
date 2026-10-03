@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>ZigZag — lounge bar в Королёве | Кальянная на проспекте Космонавтов</title>
+<meta name="description" content="Lounge bar «ZigZag» в Королёве — качественные кальяны, широкая вкусовая палитра табака, барная карта, кино, PlayStation 5 и настольные игры. Проспект Космонавтов, 36Б." />
+<meta name="theme-color" content="#08070A" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="canonical" href="https://zigzag-korolev.ru/" />
+
+<meta property="og:type" content="business.business" />
+<meta property="og:site_name" content="ZigZag lounge bar" />
+<meta property="og:title" content="ZigZag — lounge bar в Королёве" />
+<meta property="og:description" content="Оазис умиротворения и гармонии. Кальян, бар, кино, PS5 и настольные игры на проспекте Космонавтов, 36Б." />
+<meta property="og:locale" content="ru_RU" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;600;800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap&subset=cyrillic,latin" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BarOrPub",
+  "name": "ZigZag lounge bar",
+  "description": "Lounge bar «ZigZag» — кальянная в Королёве: широкий выбор табака, барная карта, кино, PlayStation 5 и настольные игры.",
+  "telephone": "+7 977 311-12-06",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "проспект Космонавтов, 36Б",
+    "addressLocality": "Королёв",
+    "addressRegion": "Московская область",
+    "addressCountry": "RU"
+  },
+  "sameAs": ["https://vk.ru/zigzag_korolev"],
+  "servesCuisine": "Hookah lounge",
+  "smokingAllowed": true
+}
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Перейти к содержанию</a>
+
+<!-- ======== PRELOADER ======== -->
+<div class="loader" id="loader" role="status" aria-live="polite">
+  <div class="loader__inner">
+    <svg class="loader__mark" viewBox="0 0 120 40" aria-hidden="true">
+      <polyline points="4,32 24,8 44,32 64,8 84,32 104,8 116,20"
+                fill="none" stroke="currentColor" stroke-width="4"
+                stroke-linecap="square" stroke-linejoin="miter" />
+    </svg>
+    <div class="loader__label">
+      <span class="loader__word">ZIGZAG</span>
+      <span class="loader__pct" id="loaderPct">0%</span>
+    </div>
+    <div class="loader__bar"><i id="loaderBar"></i></div>
+  </div>
+</div>
+
+<!-- ======== 3D STAGE ======== -->
+<div class="stage" id="stage" aria-hidden="true">
+  <canvas id="scene"></canvas>
+  <div class="stage__grain"></div>
+  <div class="stage__vignette"></div>
+</div>
+
+<!-- ======== HEADER ======== -->
+<header class="nav" id="nav">
+  <a class="nav__brand" href="#hero" aria-label="ZigZag lounge bar — в начало">
+    <svg class="nav__mark" viewBox="0 0 60 24" aria-hidden="true">
+      <polyline points="2,20 14,4 26,20 38,4 50,20 58,10" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="square" />
+    </svg>
+    <span class="nav__name">ZIGZAG</span>
+  </a>
+
+  <nav class="nav__links" aria-label="Основная навигация">
+    <a href="#about">Место</a>
+    <a href="#flavors">Вкусы</a>
+    <a href="#leisure">Досуг</a>
+    <a href="#bar">Бар</a>
+    <a href="#visit">Контакты</a>
+  </nav>
+
+  <a class="nav__cta" href="tel:+79773111206">
+    <span class="nav__ctaDot" aria-hidden="true"></span>
+    <span class="nav__ctaText">+7 977 311-12-06</span>
+  </a>
+
+  <button class="nav__burger" id="burger" aria-expanded="false" aria-controls="mobileMenu" aria-label="Открыть меню">
+    <span></span><span></span>
+  </button>
+</header>
+
+<div class="mmenu" id="mobileMenu" hidden>
+  <nav class="mmenu__links" aria-label="Мобильная навигация">
+    <a href="#about"><i>01</i>Место</a>
+    <a href="#flavors"><i>02</i>Вкусы</a>
+    <a href="#leisure"><i>03</i>Досуг</a>
+    <a href="#bar"><i>04</i>Бар</a>
+    <a href="#visit"><i>05</i>Контакты</a>
+  </nav>
+  <a class="mmenu__call" href="tel:+79773111206">Позвонить · +7 977 311-12-06</a>
+</div>
+
+<!-- ======== CHAPTER RAIL ======== -->
+<aside class="rail" id="rail" aria-hidden="true">
+  <span class="rail__line"><i id="railFill"></i></span>
+  <ol class="rail__list">
+    <li data-rail="hero"><b>00</b><span>Пролог</span></li>
+    <li data-rail="about"><b>01</b><span>Место</span></li>
+    <li data-rail="flavors"><b>02</b><span>Вкусы</span></li>
+    <li data-rail="leisure"><b>03</b><span>Досуг</span></li>
+    <li data-rail="bar"><b>04</b><span>Бар</span></li>
+    <li data-rail="visit"><b>05</b><span>Визит</span></li>
+  </ol>
+</aside>
+
+<main id="main">
+
+  <!-- ============ 00 · HERO ============ -->
+  <section class="sec sec--hero" id="hero" data-chapter="hero">
+    <div class="hero">
+      <p class="hero__kicker" data-reveal>
+        <span>Королёв</span><em aria-hidden="true">✳</em><span>lounge&nbsp;bar</span>
+      </p>
+
+      <h1 class="hero__title" aria-label="ZigZag">
+        <span class="hero__line" data-reveal><span>ZIG</span></span>
+        <span class="hero__line hero__line--shift" data-reveal><span>ZAG</span></span>
+      </h1>
+
+      <p class="hero__lead" data-reveal>
+        Оазис умиротворения и&nbsp;гармонии в&nbsp;центре Королёва.
+        Плотный дым, мягкий свет и&nbsp;вечер, который не&nbsp;хочется заканчивать.
+      </p>
+
+      <div class="hero__actions" data-reveal>
+        <a class="btn btn--primary" href="#visit">
+          Забронировать стол
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M12 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a class="btn btn--ghost" href="#flavors">Посмотреть вкусы</a>
+      </div>
+
+      <div class="hero__meta" data-reveal>
+        <div><b>36Б</b><span>пр-т Космонавтов</span></div>
+        <div><b>PS5</b><span>кино · настолки</span></div>
+        <div><b>∞</b><span>вкусовая палитра</span></div>
+      </div>
+    </div>
+
+    <div class="scrollcue" aria-hidden="true">
+      <span class="scrollcue__text">Крутите — кальян повернётся</span>
+      <span class="scrollcue__line"><i></i></span>
+    </div>
+  </section>
+
+  <!-- ============ 01 · ABOUT ============ -->
+  <section class="sec sec--left" id="about" data-chapter="about">
+    <div class="panel">
+      <p class="kicker" data-reveal><i>01</i> Место</p>
+      <h2 class="h2" data-reveal>Тишина,<br />собранная<br /><em>вручную</em></h2>
+      <p class="lead" data-reveal>
+        «ZigZag» — не проходная кальянная. Это лаунж, где свет приглушён до правильной температуры,
+        музыка не перекрикивает разговор, а мастер собирает кальян под вас, а не по инструкции.
+      </p>
+      <ul class="facts" data-reveal>
+        <li><b>Мастер</b><span>Забивка под ваш вкус и тягу — от лёгкой до плотной</span></li>
+        <li><b>Компания</b><span>Столы для двоих и большие диваны для своих</span></li>
+        <li><b>Темп</b><span>Никто не торопит: вечер идёт в вашем ритме</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ 02 · FLAVORS ============ -->
+  <section class="sec sec--right" id="flavors" data-chapter="flavors">
+    <div class="panel">
+      <p class="kicker" data-reveal><i>02</i> Вкусы</p>
+      <h2 class="h2" data-reveal>Весь спектр,<br />который<br /><em>различим</em></h2>
+      <p class="lead" data-reveal>
+        Широкая линейка табаков — от классики до редких миксов. Вкусовая палитра покрывает
+        почти всё, что человек вообще способен различить.
+      </p>
+
+      <div class="cards" data-reveal>
+        <article class="card">
+          <span class="card__idx">F—01</span>
+          <h3>Сладкие<br />фруктовые</h3>
+          <p>Манго, персик, дыня. Мягкий вход, длинный хвост.</p>
+        </article>
+        <article class="card">
+          <span class="card__idx">F—02</span>
+          <h3>Кислые<br />ягодные</h3>
+          <p>Вишня, ежевика, лайм. Кислинка, которая будит вкус.</p>
+        </article>
+        <article class="card">
+          <span class="card__idx">F—03</span>
+          <h3>Гастро<br />миксы</h3>
+          <p>Десерты, пряности, чай. Для тех, кто пробовал всё.</p>
+        </article>
+      </div>
+
+      <p class="note" data-reveal>Не знаете, что выбрать — скажите настроение. Остальное соберёт мастер.</p>
+    </div>
+  </section>
+
+  <!-- ============ 03 · LEISURE ============ -->
+  <section class="sec sec--left" id="leisure" data-chapter="leisure">
+    <div class="panel">
+      <p class="kicker" data-reveal><i>03</i> Досуг</p>
+      <h2 class="h2" data-reveal>Вечер с<br /><em>сюжетом</em></h2>
+      <p class="lead" data-reveal>
+        Кальян — центр вечера, но не весь вечер. У нас есть чем занять руки, глаза и азарт.
+      </p>
+
+      <ul class="tiles" data-reveal>
+        <li class="tile">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="5" width="19" height="13" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 9.5v5l4.5-2.5z" fill="currentColor"/></svg>
+          <b>Кино</b><span>Большой экран и подборка фильмов на вечер</span>
+        </li>
+        <li class="tile">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 8h11a4 4 0 0 1 3.9 3.1l.9 4A3 3 0 0 1 19.4 19c-.9 0-1.7-.4-2.3-1.1L15.6 16H8.4l-1.5 1.9C6.3 18.6 5.5 19 4.6 19a3 3 0 0 1-2.9-3.9l.9-4A4 4 0 0 1 6.5 8z" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M7 11v3M5.5 12.5h3M16 12h.01M18 13.8h.01" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          <b>PlayStation 5</b><span>Та самая консоль — турниры до последнего раунда</span>
+        </li>
+        <li class="tile">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="8.5" cy="8.5" r="1.3" fill="currentColor"/><circle cx="15.5" cy="15.5" r="1.3" fill="currentColor"/><circle cx="15.5" cy="8.5" r="1.3" fill="currentColor"/><circle cx="8.5" cy="15.5" r="1.3" fill="currentColor"/></svg>
+          <b>Настольные игры</b><span>От быстрых пати-игр до долгих стратегий</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ 04 · BAR ============ -->
+  <section class="sec sec--right" id="bar" data-chapter="bar">
+    <div class="panel">
+      <p class="kicker" data-reveal><i>04</i> Бар</p>
+      <h2 class="h2" data-reveal>Правильный<br />глоток к<br /><em>затяжке</em></h2>
+      <p class="lead" data-reveal>
+        Барная карта собрана так, чтобы дополнять кальян, а не спорить с ним:
+        прохладительное — чтобы освежить вкус, согревающее — чтобы его раскрыть.
+      </p>
+
+      <dl class="menu" data-reveal>
+        <div><dt>Прохладительное</dt><dd>Лимонады, морсы, тоники, фреши со льдом</dd></div>
+        <div><dt>Чайная карта</dt><dd>Большие чайники на компанию, свежие добавки</dd></div>
+        <div><dt>Кофе</dt><dd>Классика и авторские сочетания под десерт</dd></div>
+        <div><dt>Согревающее</dt><dd>Горячие напитки для длинного зимнего вечера</dd></div>
+      </dl>
+
+      <p class="note" data-reveal>Актуальные позиции и цены — по телефону или на месте.</p>
+    </div>
+  </section>
+
+  <!-- ============ 05 · VISIT ============ -->
+  <section class="sec sec--visit" id="visit" data-chapter="visit">
+    <div class="visit">
+      <p class="kicker" data-reveal><i>05</i> Визит</p>
+      <h2 class="h2 h2--big" data-reveal>Ждём вас<br />на Космонавтов, <em>36Б</em></h2>
+
+      <div class="visit__grid">
+        <a class="vcard vcard--accent" href="tel:+79773111206" data-reveal>
+          <span class="vcard__label">Бронь и вопросы</span>
+          <strong class="vcard__value">+7 977 311-12-06</strong>
+          <span class="vcard__hint">Владимир Андреевич, управляющий</span>
+        </a>
+
+        <a class="vcard" href="https://yandex.ru/maps/?text=Королёв%2C%20проспект%20Космонавтов%2C%2036Б" target="_blank" rel="noopener noreferrer" data-reveal>
+          <span class="vcard__label">Адрес</span>
+          <strong class="vcard__value">пр-т Космонавтов, 36Б</strong>
+          <span class="vcard__hint">Королёв, Московская область · открыть карту</span>
+        </a>
+
+        <a class="vcard" href="https://vk.ru/zigzag_korolev" target="_blank" rel="noopener noreferrer" data-reveal>
+          <span class="vcard__label">Новости и афиша</span>
+          <strong class="vcard__value">ВКонтакте</strong>
+          <span class="vcard__hint">vk.ru/zigzag_korolev</span>
+        </a>
+
+        <div class="vcard" data-reveal>
+          <span class="vcard__label">Часы работы</span>
+          <strong class="vcard__value">Ежедневно</strong>
+          <span class="vcard__hint">Точное время — уточняйте по телефону</span>
+        </div>
+      </div>
+
+      <p class="visit__legal" data-reveal>
+        Заведение для лиц старше 18 лет. Курение вредит вашему здоровью.
+      </p>
+    </div>
+
+    <footer class="foot">
+      <span>© <span id="year">2026</span> ZigZag lounge bar · Королёв</span>
+      <span class="foot__made">Сайт построен вокруг одной 3D-модели</span>
+    </footer>
+  </section>
+
+</main>
+
+<script type="module" src="/src/main.js"></script>
+</body>
+</html>

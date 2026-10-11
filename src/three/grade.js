@@ -31,8 +31,12 @@ export const GradeShader = {
     uniform float uSaturation;
     varying vec2 vUv;
 
+    // sin()-based hashes lose precision at large arguments on some GPUs and
+    // turn into vertical stripes; this one uses only fract/dot on small values.
     float hash(vec2 p) {
-      return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453123);
+      vec3 p3 = fract(vec3(p.xyx) * 0.1031);
+      p3 += dot(p3, p3.yzx + 33.33);
+      return fract((p3.x + p3.y) * p3.z);
     }
 
     void main() {
@@ -59,7 +63,8 @@ export const GradeShader = {
       col *= mix(0.42, 1.0, vig);
 
       // grain, slightly stronger in the shadows
-      float g = hash(vUv * vec2(1920.0, 1080.0) + fract(uTime) * 91.7) - 0.5;
+      vec2 px = floor(gl_FragCoord.xy);
+      float g = hash(px + floor(fract(uTime * 0.5) * 24.0) * vec2(37.0, 17.0)) - 0.5;
       col += g * uGrain * (1.25 - luma);
 
       // gentle lift so blacks read as room-dark, not void-black

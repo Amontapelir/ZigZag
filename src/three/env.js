@@ -111,7 +111,7 @@ export function buildBackdrop() {
         col += uGlow * pool * (0.85 + 0.15 * sin(uTime * 0.35));
 
         // faint banding break-up
-        float n = fract(sin(dot(vDir.xy, vec2(12.9898, 78.233))) * 43758.5453);
+        float n = fract(52.9829189 * fract(dot(gl_FragCoord.xy, vec2(0.06711056, 0.00583715))));
         col += (n - 0.5) * 0.012;
 
         gl_FragColor = vec4(col, 1.0);
